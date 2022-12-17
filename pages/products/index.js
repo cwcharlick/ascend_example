@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { server } from "../../config";
 
 import Filters from "../../components/product/Filters";
 import ProductList from "../../components/product/ProductList";
@@ -22,7 +23,7 @@ export default function ProductPage({ products }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/products/`);
+  const res = await fetch(`${server}/api/products/`);
   const products = await res.json();
 
   return {

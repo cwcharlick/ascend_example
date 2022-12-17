@@ -2,6 +2,8 @@ import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
 import Link from "next/link";
 import { useState } from "react";
 
+import { server } from "../../../config";
+
 import ProductCard from "../../../components/product/ProductCard";
 import ProductConfig from "../../../components/product/ProductConfig";
 import ProductInfo from "../../../components/product/ProductInfo";
@@ -39,17 +41,11 @@ export default function product({ product, logs }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const productRes = await fetch(
-    `http://localhost:3000/api/products/${context.params.sn}`
-  );
+  const productRes = await fetch(`${server}/api/products/${context.params.sn}`);
   const product = await productRes.json();
 
-  const logsRes = await fetch(
-    `http://localhost:3000/api/logs/${context.params.sn}`
-  );
+  const logsRes = await fetch(`${server}/api/logs/${context.params.sn}`);
 
-  // console.log(`http://localhost:3000/api/logs/${context.params.sn}`);
-  // console.log(productRes);
   const logs = await logsRes.json();
 
   return { props: { product, logs } };
