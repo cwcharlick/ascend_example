@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3px;
+}
+
+.search {
+  width: 100%;
+  background-color: #ddd9d9;
+  padding: 8px;
+  padding-left: 30px;
+  border: 0;
+  border-radius: 3px;
+  margin: 0;
+}
+
+.searchContainer {
+  width: 100%;
+  position: relative;
+  padding: 5px 10px;
+}
+
+.searchContainer svg {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  transform: translateY(-50%);
+}
+
+.filtersContainer {
+  padding: 5px 10px;
+  display: flex;
+}
+
+.filtersContainer > * {
+  margin-right: 10px;
+}

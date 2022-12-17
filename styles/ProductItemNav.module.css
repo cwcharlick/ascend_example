@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.container > ul {
+  display: flex;
+  list-style-type: none;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+.container li {
+  flex-grow: 1;
+  padding: 10px;
+  border-bottom: 1px solid var(--neutral);
+  text-align: center;
+  width: 1px;
+  cursor: pointer;
+}
+
+.underline {
+  position: absolute;
+  height: 3px;
+  background-color: var(--main);
+  bottom: -1px;
+  left: 0;
+  transition: left 0.3s ease;
+}
